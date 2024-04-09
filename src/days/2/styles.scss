@@ -1,0 +1,135 @@
+$line-height: 8px;
+$margin: 10px;
+
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: #3faf82;
+  position: relative;
+}
+
+.box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 3 * $line-height + 3 * $margin;
+  cursor: pointer;
+}
+
+.line {
+  width: inherit;
+  height: $line-height;
+  border-radius: 4px;
+  background-color: white;
+  box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+}
+
+.line1 {
+  @extend .line;
+  transform: translateY(-$margin);
+}
+
+.line1-active {
+  animation: line1-active 0.5s ease-in-out forwards;
+}
+
+.line1-rev {
+  animation: line1-rev 0.5s ease-in-out forwards;
+}
+
+@keyframes line1-active {
+  0% {
+    transform: translateY(-$margin) rotate(0deg);
+  }
+  50% {
+    transform: translateY($line-height) rotate(0deg);
+  }
+  100% {
+    transform: translateY($line-height) rotate(45deg);
+  }
+}
+
+@keyframes line1-rev {
+  0% {
+    transform: translateY($line-height) rotate(45deg);
+  }
+  50% {
+    transform: translateY($line-height) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-$margin) rotate(0deg);
+  }
+}
+
+.line2 {
+  @extend .line;
+}
+
+.line2-active {
+  animation: line2-active 0.5s ease-in-out forwards;
+}
+
+.line2-rev {
+  animation: line2-rev 0.5s ease-in-out;
+}
+
+@keyframes line2-active {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
+
+@keyframes line2-rev {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.line3 {
+  @extend .line;
+  transform: translateY($margin);
+}
+
+.line3-active {
+  animation: line3-active 0.5s ease-in-out forwards;
+}
+
+.line3-rev {
+  animation: line3-rev 0.5s ease-in-out;
+}
+
+@keyframes line3-active {
+  0% {
+    transform: translateY($margin) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-$line-height) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-$line-height) rotate(135deg);
+  }
+}
+
+@keyframes line3-rev {
+  0% {
+    transform: translateY(-$line-height) rotate(135deg);
+  }
+  50% {
+    transform: translateY(-$line-height) rotate(0deg);
+  }
+  100% {
+    transform: translateY($margin) rotate(0deg);
+  }
+}
