@@ -1,17 +1,12 @@
 import Day1 from "./days/1";
+import "./index.scss";
 
 const App = () => {
   return (
-    <div
-      style={{
-        width: "100vw",
-        height: "100vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Day1 />
+    <div className="body">
+      <div className="frame">
+        <Day1 />
+      </div>
     </div>
   );
 };
